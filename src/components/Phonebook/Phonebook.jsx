@@ -16,6 +16,18 @@ export class Phonebook extends Component {
     ],
     filter: '',
   };
+  get localStorageKey() {
+    return 'contacts-data-key'
+  }
+  
+  componentDidUpdate() {
+    localStorage.setItem(this.localStorageKey, JSON.stringify(this.state.contacts))
+  }
+  componentDidMount() {
+
+    const parsedContacts = JSON.parse(localStorage.getItem(this.localStorageKey))
+    this.setState({contacts: parsedContacts})
+  }
 
   onSubmit = (values, { resetForm }) => {
     this.setState(prevState => {

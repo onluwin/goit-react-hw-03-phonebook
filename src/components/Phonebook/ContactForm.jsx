@@ -17,7 +17,7 @@ export const ContactForm = ({ onSubmit }) => {
         }}
         autoComplete="off"
       >
-        Name
+        <p>Name</p>
         <InputName
           type="text"
           name="name"
@@ -25,7 +25,7 @@ export const ContactForm = ({ onSubmit }) => {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
-        Number
+        <p>Number</p>
         <InputTel
           type="tel"
           name="number"
